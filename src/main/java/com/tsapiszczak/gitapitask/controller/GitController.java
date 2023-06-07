@@ -1,8 +1,8 @@
 package com.tsapiszczak.gitapitask.controller;
 
 import com.tsapiszczak.gitapitask.exception.APIException;
-import com.tsapiszczak.gitapitask.service.GitService;
 import com.tsapiszczak.gitapitask.model.GitEntity;
+import com.tsapiszczak.gitapitask.service.GitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +24,7 @@ public class GitController {
     public ResponseEntity<List<GitEntity>> getRepoByUser(@RequestHeader(value = "Accept") String acceptHeader, @RequestParam String name) {
         if (!(acceptHeader.equals("application/json"))) {
             throw new APIException(406, "Invalid Accept value in header");
-        }
-        else
+        } else
             return ResponseEntity.ok().body(gitService.getRepositoriesWithFork(name));
     }
 }

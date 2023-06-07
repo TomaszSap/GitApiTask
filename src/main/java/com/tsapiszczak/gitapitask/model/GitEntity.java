@@ -8,6 +8,6 @@ import java.util.List;
 @Data
 public class GitEntity {
     private String repositoryName;
-    private  String ownersLogin;
+    private String ownersLogin;
     private List<GitBranch> gitBranches;
 }

@@ -17,11 +17,12 @@ import java.net.URL;
 public class GitApi {
     @Value("${github.api.url}")
     String connectionString;
-    private static final String GET="GET";
+    private static final String GET = "GET";
+
     public JSONArray findReposByUser(String username) {
 
         try {
-            URL url = new URL(connectionString +"users/"+ username + "/repos");
+            URL url = new URL(connectionString + "users/" + username + "/repos");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod(GET);
 
@@ -52,7 +53,7 @@ public class GitApi {
 
     @SneakyThrows
     public JSONArray findRepoBranchDetails(String username, String repositoryName) {
-        URL url = new URL(connectionString +"repos/"+ username + "/" + repositoryName + "/branches");
+        URL url = new URL(connectionString + "repos/" + username + "/" + repositoryName + "/branches");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod(GET);
 

@@ -22,4 +22,4 @@ as well as details for each repository(findRepoBranchDetails() method). Single r
                 ]
         }
 if you use the wrong Accept value in the header, i.e. application/xml, the application returns code 406,
-if the user does not exist, the application returns a 404 code. 
+if the user does not exist, the application returns a 404 code. This codes and their messages are generating with Custom Exception APIException.class. 

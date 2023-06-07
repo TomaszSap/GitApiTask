@@ -1,7 +1,7 @@
 package com.tsapiszczak.gitapitask.service;
 
-import com.tsapiszczak.gitapitask.githubapi.GitApi;
 import com.tsapiszczak.gitapitask.exception.APIException;
+import com.tsapiszczak.gitapitask.githubapi.GitApi;
 import com.tsapiszczak.gitapitask.model.GitBranch;
 import com.tsapiszczak.gitapitask.model.GitEntity;
 import lombok.SneakyThrows;
@@ -24,7 +24,6 @@ public class GitService {
         this.gitApi = gitApi;
     }
 
-    @SneakyThrows
     public JSONArray getRepositories(String name) throws APIException {
         return gitApi.findReposByUser(name);
 
@@ -54,8 +53,8 @@ public class GitService {
                         })
                         .collect(Collectors.toList());
                 gitEntity.setGitBranches(branchList);
-                reposList.add(gitEntity);
             }
+            reposList.add(gitEntity);
         }
         return reposList;
     }

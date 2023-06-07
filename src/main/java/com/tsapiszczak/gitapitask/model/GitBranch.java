@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data
 public class GitBranch {
-    private  String name;
+    private String name;
     private String lastCommitSha;
 }
